@@ -3,6 +3,7 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using CarouselView.FormsPlugin.Android;
+using Android.Webkit;
 
 namespace FashionApp.Droid
 {
@@ -15,7 +16,6 @@ namespace FashionApp.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
-
             CarouselViewRenderer.Init();
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
