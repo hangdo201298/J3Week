@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoInsta.Views.LoginPage"
+             Title="Đăng nhập">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="15,40,15,15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="Đăng nhập" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.ColumnSpan="2" VerticalOptions="Center" />
+                
+                <Label Text="Tên đăng nhập" FontSize="Medium" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" />
+                <Entry x:Name="username" Grid.Row="1" Grid.Column="1"/>
+
+                <Label Text="Mật khẩu" FontSize="Medium" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" />
+                <Entry x:Name="password" Grid.Row="2" Grid.Column="1"/>
+
+                <Button Grid.Row="3" Grid.ColumnSpan="2" x:Name="btnLogin" Clicked="BtnLogin_Clicked" Text="Đăng nhập" VerticalOptions="CenterAndExpand"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

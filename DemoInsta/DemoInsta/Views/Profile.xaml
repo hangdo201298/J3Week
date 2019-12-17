@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoInsta.Views.Profile">
+    <StackLayout Padding="10">
+        <Frame CornerRadius="70" HorizontalOptions="Center">
+            <Image Source="dp" WidthRequest="70" HeightRequest="70"/>
+        </Frame>
+        <Label Text="Hang" TextColor="Black" FontSize="Large" FontAttributes="Bold, Italic" Margin="0,0,0,10" VerticalOptions="Center" HorizontalOptions="Center" />
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".25*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Thông tin tài khoản" FontAttributes="Bold" TextColor="Black" 
+                           VerticalOptions="Center"  Margin="0,4,0,0" FontSize="Medium" 
+                           Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                <Label Text="Name" FontSize="Medium" TextColor="Black" VerticalOptions="CenterAndExpand" 
+                           Grid.Row="1" Grid.Column="0"/>
+                <Entry Text="ハン" Grid.Row="1" Grid.Column="1"/>
+                <!--<Label Text="Phone" FontSize="Medium"  TextColor="Black" VerticalOptions="CenterAndExpand" 
+                           Grid.Row="2" Grid.Column="0"/>
+                    <Entry Text="0347893905" Grid.Row="2" Grid.Column="1"/>
+                    <Label Text="Email" FontSize="Medium"  TextColor="Black" VerticalOptions="CenterAndExpand" 
+                           Grid.Row="3" Grid.Column="0"/>
+                    <Entry Text="hangdtt2012@gmail.com" Grid.Row="3" Grid.Column="1"/>
+                    <Label Text="Gender" FontSize="Medium"  TextColor="Black" VerticalOptions="CenterAndExpand" 
+                           Grid.Row="4" Grid.Column="0"/>
+                    <Switch Grid.Row="4" Grid.Column="1"/>
+                    <Label Text="Birthday" FontSize="Medium"  TextColor="Black" VerticalOptions="CenterAndExpand" 
+                           Grid.Row="5" Grid.Column="0"/>
+                    <DatePicker Format="D" VerticalOptions="CenterAndExpand" Grid.Row="5" Grid.Column="1"/>-->
+                <Button Text="Update" Grid.Row="6" Grid.Column="0" BackgroundColor="#0E725E" TextColor="White"/>
+                <Button Text="Cancel" Grid.Row="6" Grid.Column="1" BackgroundColor="#0E725E" TextColor="White" Clicked="Cancel_Clicked"/>
+            </Grid>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
+    

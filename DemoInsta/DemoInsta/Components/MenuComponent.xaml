@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoInsta.Components.MenuComponent"
+             xmlns:Components="clr-namespace:DemoInsta.Components;assembly=DemoInsta"
+             xmlns:Local="clr-namespace:DemoInsta.Views;assembly=DemoInsta"
+             Padding="10"
+             BackgroundColor="White"
+             Spacing="10">
+
+    <StackLayout Orientation="Horizontal" BackgroundColor="#0E725E">
+        <Image Source="dp" WidthRequest="70" HeightRequest="70" Margin="15,10,0,10" HorizontalOptions="Start" />
+        <Label Text="Hello, Hang" TextColor="White" FontSize="Large" FontAttributes="Bold, Italic" Margin="10,0,0,0" 
+                       VerticalOptions="Center"/>
+    </StackLayout>
+
+    <Button Text="About" FontAttributes="Bold" Clicked="Profile"/>
+    <Label Text="Friends" FontAttributes="Bold"/>
+    <Label Text="Photo" FontAttributes="Bold"/>
+    <Label Text="Post" FontAttributes="Bold"/>
+    <Label Text="Settings" FontAttributes="Bold"/>
+
+    <!--<Components:SettingsMultiSelectComponent x:Name="LocationElement" Title="Locations"/>
+    <Components:SettingsMultiSelectComponent x:Name="UserElement" Title="Users"/>-->
+    <!--<Button Text="Apply" Clicked="ApplyFilter" HorizontalOptions="EndAndExpand" BorderColor="Gray" BorderRadius="1" BorderWidth="1"/>-->
+
+</StackLayout>
