@@ -98,7 +98,7 @@
                                     <ColumnDefinition Width="62*" />
                                 </Grid.ColumnDefinitions>
                                 <AbsoluteLayout Grid.Row="0" Grid.Column="0">
-                                    <Image x:Name="AvatarImage" WidthRequest="120" HeightRequest="120" Source="dp.png" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize" />
+                                    <Image x:Name="AvatarImage" WidthRequest="120" HeightRequest="120" Source="image3.jpg" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize" />
                                 </AbsoluteLayout>
                                 <ContentView Padding="5, 0, 0, 0" Grid.Row="0" Grid.Column="1">
                                     <StackLayout Spacing="10">

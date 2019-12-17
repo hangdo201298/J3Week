@@ -14,11 +14,26 @@
                        VerticalOptions="Center"/>
     </StackLayout>
 
-    <Button Text="About" FontAttributes="Bold" Clicked="Profile"/>
-    <Label Text="Friends" FontAttributes="Bold"/>
-    <Label Text="Photo" FontAttributes="Bold"/>
-    <Label Text="Post" FontAttributes="Bold"/>
-    <Label Text="Settings" FontAttributes="Bold"/>
+    <Label Text="Profile" FontAttributes="Bold" FontSize="Medium" TextColor="Black" Margin="10,0,0,10">
+        <Label.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Profile"/>
+        </Label.GestureRecognizers>
+    </Label>
+    <Label Text="Friends" FontAttributes="Bold" FontSize="Medium" TextColor="Black" Margin="0,0,0,10">
+        <Label.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Profile"/>
+        </Label.GestureRecognizers>
+    </Label>
+    <Label Text="Photo" FontAttributes="Bold" FontSize="Medium" TextColor="Black" Margin="0,0,0,10">
+        <Label.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Profile"/>
+        </Label.GestureRecognizers>
+    </Label>
+    <Label Text="Post" FontAttributes="Bold" FontSize="Medium" TextColor="Black" Margin="0,0,0,10">
+        <Label.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Profile"/>
+        </Label.GestureRecognizers>
+    </Label>
 
     <!--<Components:SettingsMultiSelectComponent x:Name="LocationElement" Title="Locations"/>
     <Components:SettingsMultiSelectComponent x:Name="UserElement" Title="Users"/>-->
