@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 // config for your database
 var config = {
     user: 'sa',
-    password: '01647893905',
+    password: '123456',
     server: 'localhost', 
     database: 'SHOP' 
 };
@@ -24,19 +24,35 @@ function sqlQuery(sql_q, callback) {
     });
 }
 
-
 app.get('/', function (req, res) {
-    console.log('load API'); //results.recordsets
-    res.send('load API hello mọi người');
+    console.log('connect API'); 
+    res.send('connect API success');
 });
 
 app.get('/users/all', function (req, res) {
-    console.log('load get ALL data');
+    console.log('load all user');
     sqlQuery("select * from Users", function(err, results){
-        if (err) throw err;
+
+        var code = 0;
+        if (err) {
+            var dataresponse = {
+                'code' : code,
+                'data' : 'error'
+            }
+            res.send(dataresponse);
+            throw err;
+        }
         
-        console.log(results); //results.recordsets
-        res.send(results);
+        else {
+            console.log(results);
+            code = 1;
+            var dataresponse = {
+                'code' : code,
+                'data' : results.recordset
+            }
+            res.send(dataresponse);
+        }
+        
     })
 });
 
@@ -55,8 +71,7 @@ app.get('/users/:id', (req, res) => {
             throw err;
         };
         
-        console.log(result); //results.recordsets
-        console.log(result.rowsAffected);
+        console.log(result);
         
         if(result.recordset.length == 1  ){
             console.log("đúng"); 
@@ -88,8 +103,25 @@ app.post('/users/addUser', (request, response) => {
     request.input('Email', sql.VarChar(255), val.Email);
     request.multiple = true;
     request.query("INSERT INTO Users (UserID, LastName, FirstName, Passwords, Email) VALUES (@UserID, @LastName, @FirstName, @Passwords, @Email)", function(err, recordsets) {
-        console.log(recordsets); //results.recordsets
-        response.send(recordsets);
+        
+        var code = 0;
+        if (err) {
+            var dataresponse = {
+                'code' : code,
+                'data' : 'error'
+            }
+            response.send(dataresponse);
+            throw err;
+        }
+        else{
+            console.log(recordsets);
+            code = 1;
+            var dataresponse = {
+                'code' : code,
+                'data' : 'Thêm thành công'
+            }
+            response.send(dataresponse);    
+        }
         
     });
     });
@@ -113,8 +145,25 @@ app.put('/users/updateUser', (request, response) => {
     request.input('Email', sql.VarChar(255), val.Email);
     request.multiple = true;
     request.query("UPDATE Users SET LastName=@LastName, FirstName=@FirstName, Passwords = @Passwords, Email=@Email WHERE UserID=@UserID", function(err, recordsets) {
-        console.log(recordsets); //results.recordsets
-        response.send(recordsets);
+        var code = 0;
+        if (err) {
+            var dataresponse = {
+                'code' : code,
+                'data' : 'error'
+            }
+            response.send(dataresponse);
+            throw err;
+        }
+        else{
+            console.log(recordsets);
+        
+            code = 1;
+            var dataresponse = {
+                'code' : code,
+                'data' : 'Cập nhật thành công'
+            }
+            response.send(dataresponse);    
+        }
         
     });
     });
@@ -136,9 +185,10 @@ app.post('/login', (req, res) => {
             }
             res.send(dataresponse);
             throw err
-        };
+        }
+        else {
         if(result.recordset.length == 1  ){
-            console.log("đúng"); 
+            console.log("Login success"); 
             code = 1;
         }
 
@@ -147,6 +197,7 @@ app.post('/login', (req, res) => {
             'data' : result.recordset
         }
         res.send(dataresponse);
+        }
     });
 });
 
@@ -156,9 +207,26 @@ app.delete('/users/:id', (req, res) => {
     const id = req.params.id;
  
     sqlQuery(`DELETE from Users where UserID = \'${id}\'`, function(err, result) {
-        if (err) throw err;
-        console.log(result); //results.recordsets
-        res.send(result);
+        var code = 0;
+        if (err) {
+            var dataresponse = {
+                'code' : code,
+                'data' : 'error'
+            }
+            res.send(dataresponse);
+            throw err;
+        }
+        else{
+            
+            console.log(result);
+        
+            code = 1;
+            var dataresponse = {
+                'code' : code,
+                'data' : 'Xóa thành công'
+            }
+            res.send(dataresponse);    
+        }
     });
 });
 
