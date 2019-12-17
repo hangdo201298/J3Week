@@ -11,8 +11,8 @@ namespace DemoInsta
         {
             InitializeComponent();
 
-            //MainPage = new DemoInsta.MainPage();
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new LoginPage();
+            //MainPage = new NavigationPage(new LoginPage());
         }
     }
 }
