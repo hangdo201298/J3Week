@@ -21,5 +21,13 @@ namespace DemoInsta.Views
         {
             Navigation.PopModalAsync();
         }
+        private void Back(object sender, System.EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
+        private void Edit(object sender, System.EventArgs e)
+        {
+            
+        }
     }
 }
