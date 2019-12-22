@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 // config for your database
 var config = {
     user: 'sa',
-    password: '123456',
+    password: '01647893905',
     server: 'localhost', 
     database: 'SHOP' 
 };
